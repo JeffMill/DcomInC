@@ -1,12 +1,13 @@
+.vs/
+[Bb]ackup/
 [Dd]ebug/
 [Rr]elease/
+ipch/
 
 *_h.h
 *_i.c
 *_p.c
-*_wpftmp.csproj
 *.aps
-*.cachefile
 *.dll
 *.dsw
 *.exp
@@ -18,8 +19,6 @@
 *.meta
 *.ncb
 *.obj
-*.opendb
-*.opensdf
 *.opt
 *.pch
 *.pdb
@@ -31,7 +30,6 @@
 *.sbr
 *.scc
 *.sdf
-*.svclog
 *.suo
 *.tlb
 *.tlh
@@ -39,8 +37,5 @@
 *.tlog
 *.tmp
 *.tmp_proj
-*.VC.db
-*.VC.VC.opendb
-*.vspscc
-*.vssscc
-ipch/
+*.vcxproj.user
+[Uu]pgrade[Ll]og.htm

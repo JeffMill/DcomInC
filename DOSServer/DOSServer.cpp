@@ -23,16 +23,16 @@ int _cdecl main(int argc, char *argv[])
 
     for (i = 1; i < argc; i++)
     {
-        if (stricmp( argv[i], "-Embedding" ) == 0)
+        if (_stricmp( argv[i], "-Embedding" ) == 0)
         {
             //This server has been activated by OLE.
             fEmbedding = TRUE;
         }
-        else if (stricmp( argv[i], "/REGSERVER" ) == 0)
+        else if (_stricmp( argv[i], "/REGSERVER" ) == 0)
         {
             fRegisterServer = TRUE;
         }
-        else if (stricmp( argv[i], "/UNREGSERVER" ) == 0)
+        else if (_stricmp( argv[i], "/UNREGSERVER" ) == 0)
         {
             fUnregisterServer = TRUE;
         }

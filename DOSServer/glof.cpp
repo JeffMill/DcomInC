@@ -43,7 +43,7 @@ HRESULT RegisterLocalServer(REFCLSID rclsid)
     if(!error)
     {
         //convert the class ID to a registry key name.
-        sprintf(szClassID, "{%08lX-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}",
+        sprintf_s(szClassID, ARRAYSIZE(szClassID), "{%08lX-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}",
                 rclsid.Data1, rclsid.Data2, rclsid.Data3,
                 rclsid.Data4[0], rclsid.Data4[1],
                 rclsid.Data4[2], rclsid.Data4[3],
@@ -119,7 +119,7 @@ HRESULT UnregisterLocalServer(REFCLSID rclsid)
     if(!error)
     { 
     //convert the class ID to a registry key name.
-    sprintf(szClassID, "{%08lX-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}",
+    sprintf_s(szClassID, ARRAYSIZE(szClassID), "{%08lX-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}",
             rclsid.Data1, rclsid.Data2, rclsid.Data3,
             rclsid.Data4[0], rclsid.Data4[1],
             rclsid.Data4[2], rclsid.Data4[3],

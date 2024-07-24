@@ -3,18 +3,18 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 6.00.0361 */
-/* at Sun Dec 24 18:28:47 2006
+ /* File created by MIDL compiler version 8.01.0628 */
+/* at Mon Jan 18 19:14:07 2038
  */
 /* Compiler settings for DOSProxy.idl:
-    Oi, W1, Zp8, env=Win32 (32b run)
+    Oi, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.01.0628 
     protocol : dce , ms_ext, c_ext
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
-//@@MIDL_FILE_HEADING(  )
+/* @@MIDL_FILE_HEADING(  ) */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
 
@@ -29,7 +29,7 @@
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
-#endif // __RPCNDR_H_VERSION__
+#endif /* __RPCNDR_H_VERSION__ */
 
 #ifndef COM_NO_WINDOWS_H
 #include "windows.h"
@@ -43,11 +43,20 @@
 #pragma once
 #endif
 
+#ifndef DECLSPEC_XFGVIRT
+#if defined(_CONTROL_FLOW_GUARD_XFG)
+#define DECLSPEC_XFGVIRT(base, func) __declspec(xfg_virtual(base, func))
+#else
+#define DECLSPEC_XFGVIRT(base, func)
+#endif
+#endif
+
 /* Forward Declarations */ 
 
 #ifndef __IDOSServer_FWD_DEFINED__
 #define __IDOSServer_FWD_DEFINED__
 typedef interface IDOSServer IDOSServer;
+
 #endif 	/* __IDOSServer_FWD_DEFINED__ */
 
 
@@ -58,8 +67,6 @@ typedef interface IDOSServer IDOSServer;
 extern "C"{
 #endif 
 
-void * __RPC_USER MIDL_user_allocate(size_t);
-void __RPC_USER MIDL_user_free( void * ); 
 
 #ifndef __IDOSServer_INTERFACE_DEFINED__
 #define __IDOSServer_INTERFACE_DEFINED__
@@ -85,29 +92,37 @@ EXTERN_C const IID IID_IDOSServer;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IDOSServerVtbl
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IDOSServer * This,
             /* [in] */ REFIID riid,
-            /* [iid_is][out] */ void **ppvObject);
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IDOSServer * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             IDOSServer * This);
         
+        DECLSPEC_XFGVIRT(IDOSServer, createBoss)
         HRESULT ( STDMETHODCALLTYPE *createBoss )( 
             IDOSServer * This);
         
+        DECLSPEC_XFGVIRT(IDOSServer, destroyBoss)
         HRESULT ( STDMETHODCALLTYPE *destroyBoss )( 
             IDOSServer * This);
         
+        DECLSPEC_XFGVIRT(IDOSServer, getBossId)
         HRESULT ( STDMETHODCALLTYPE *getBossId )( 
             IDOSServer * This,
             /* [out] */ int *nId);
@@ -126,23 +141,23 @@ EXTERN_C const IID IID_IDOSServer;
 
 
 #define IDOSServer_QueryInterface(This,riid,ppvObject)	\
-    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
 #define IDOSServer_AddRef(This)	\
-    (This)->lpVtbl -> AddRef(This)
+    ( (This)->lpVtbl -> AddRef(This) ) 
 
 #define IDOSServer_Release(This)	\
-    (This)->lpVtbl -> Release(This)
+    ( (This)->lpVtbl -> Release(This) ) 
 
 
 #define IDOSServer_createBoss(This)	\
-    (This)->lpVtbl -> createBoss(This)
+    ( (This)->lpVtbl -> createBoss(This) ) 
 
 #define IDOSServer_destroyBoss(This)	\
-    (This)->lpVtbl -> destroyBoss(This)
+    ( (This)->lpVtbl -> destroyBoss(This) ) 
 
 #define IDOSServer_getBossId(This,nId)	\
-    (This)->lpVtbl -> getBossId(This,nId)
+    ( (This)->lpVtbl -> getBossId(This,nId) ) 
 
 #endif /* COBJMACROS */
 
