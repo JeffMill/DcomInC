@@ -1,0 +1,19 @@
+/*****************************************************
+
+	File: DOSProxy.dll
+
+******************************************************/
+[  
+	object,
+	uuid(7CCB1299-AC38-4cbc-A48E-E924BE10678C)
+]
+interface IDOSServer : IUnknown
+{
+ 	import "unknwn.idl";
+
+	HRESULT createBoss();
+	HRESULT destroyBoss();
+	HRESULT getBossId([out] int* nId); 
+}
+
+

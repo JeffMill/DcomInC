@@ -1,0 +1,15 @@
+;-----------------------------------------
+;
+;	File DOSProxy.def
+;
+;-----------------------------------------
+
+LIBRARY      DOSProxy
+
+DESCRIPTION  'DOS Client/Server Application'
+
+EXPORTS
+        DllGetClassObject   PRIVATE
+        DllCanUnloadNow     PRIVATE
+        DllRegisterServer   PRIVATE
+        DllUnregisterServer PRIVATE
